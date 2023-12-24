@@ -1,0 +1,95 @@
+{
+	"name": "polyglot",
+	"displayName": "polyglot",
+	"description": "polyglot",
+	"version": "0.0.1",
+	"publisher": "Polyglot",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"files": [
+		"media",
+		"README.md",
+		"CHANGELOG.md"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SaraFerrari99/webview_tirocinio.git",
+		"logo": "https://i.postimg.cc/gjCQ9yVB/Bell.jpg"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onView: nodeDependencies"
+	],
+	"browser": "./dist/web/extension.js",
+	"main": "./out/web/extension.js",
+	"contributes": {
+		"views": {
+			"path": [
+				{
+					"id": "nodeDependencies",
+					"name": "nodeDependencies",
+					"contextualTitle": "Path"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "path",
+					"title": "Polyglot",
+					"icon": "media/path.png"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.welcome",
+				"title": "Welcome",
+				"category": "Polyglot"
+			},
+			{
+				"command": "extension.page2",
+				"title": "Open Description Test",
+				"category": "Polyglot"
+			}
+		]
+	},
+	"icons": {
+		"light": "media/path.png",
+		"dark": "media/path.png"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package-web",
+		"compile-web": "webpack",
+		"watch-web": "webpack --mode production --devtool hidden-source-map",
+		"package-web": "webpack --mode production --devtool hidden-source-map"
+	},
+	"devDependencies": {
+		"@types/jquery": "^3.5.25",
+		"@types/mocha": "^10.0.3",
+		"@types/node": "^16.18.61",
+		"@types/vscode": "^1.73.0",
+		"@types/webpack": "^5.28.4",
+		"@types/webpack-env": "^1.18.3",
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"eslint": "^8.26.0",
+		"process": "^0.11.10",
+		"ts-loader": "^9.5.0",
+		"typescript": "^5.2.2",
+		"webpack": "^5.89.0",
+		"webpack-cli": "^5.1.4"
+	},
+	"dependencies": {
+		"nbpreview": "^0.3.0",
+		"axios": "^1.5.1",
+		"git": "^0.1.5",
+		"helmet": "^7.1.0",
+		"node-fetch": "^3.3.2",
+		"path-browserify": "^1.0.1",
+		"ms-vscode.jupyter": "^2021.11.331623253"
+	}
+}
